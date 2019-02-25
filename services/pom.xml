@@ -23,12 +23,6 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.tincho</groupId>
-            <artifactId>mapper</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>ma.glasnost.orika</groupId>
             <artifactId>orika-core</artifactId>
             <version>1.5.4</version>
