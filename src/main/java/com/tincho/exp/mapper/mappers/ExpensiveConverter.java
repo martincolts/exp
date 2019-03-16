@@ -1,6 +1,6 @@
 package com.tincho.exp.mapper.mappers;
 
-import com.tincho.exp.controller.ExpensiveDTO;
+import com.tincho.exp.dtos.ExpensiveDTO;
 import com.tincho.exp.model.Expensive;
 import ma.glasnost.orika.CustomMapper;
 import ma.glasnost.orika.MappingContext;

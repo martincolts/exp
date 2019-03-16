@@ -1,7 +1,6 @@
 package com.tincho.exp.controllers;
 
-import com.tincho.exp.controller.ExpensiveDTO;
-import com.tincho.exp.model.Expensive;
+import com.tincho.exp.dtos.ExpensiveDTO;
 import com.tincho.exp.services.ExpensiveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +14,7 @@ public class ExpensiveController {
     private ExpensiveService expensiveService;
 
     @RequestMapping(method = RequestMethod.POST)
-    @ResponseBody public Mono<ExpensiveDTO> saveExpensive(@RequestBody Expensive expensive){
-        return expensiveService.saveExpensive(expensive);
+    @ResponseBody public Mono<ExpensiveDTO> saveExpensive(@RequestBody ExpensiveDTO expensiveDTO){
+        return expensiveService.saveExpensive(expensiveDTO);
     }
 }

@@ -1,6 +1,6 @@
 package com.tincho.exp.services.base;
 
-import com.tincho.exp.controller.ExpensiveDTO;
+import com.tincho.exp.dtos.ExpensiveDTO;
 import com.tincho.exp.repositories.ExpensiveRepository;
 import com.tincho.exp.model.Expensive;
 import com.tincho.exp.services.ExpensiveService;
@@ -19,8 +19,11 @@ public class ExpensiveServiceBase implements ExpensiveService {
     private MapperFacade mapperFacade;
 
     @Override
-    public Mono<ExpensiveDTO> saveExpensive(Expensive expensive) {
-        return expensiveRepository.save(expensive).map(p -> mapperFacade.map(p, ExpensiveDTO.class)).flatMap(e -> Mono.just(e));
+    public Mono<ExpensiveDTO> saveExpensive(ExpensiveDTO expensiveDTO) {
+        Expensive expensive = mapperFacade.map(expensiveDTO, Expensive.class);
+        return expensiveRepository.save(expensive)
+                .map(p -> mapperFacade.map(p, ExpensiveDTO.class))
+                .flatMap(e -> Mono.just(e));
     }
 
 }

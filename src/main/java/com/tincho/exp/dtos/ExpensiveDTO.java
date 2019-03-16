@@ -1,4 +1,4 @@
-package com.tincho.exp.controller;
+package com.tincho.exp.dtos;
 
 import lombok.Data;
 
